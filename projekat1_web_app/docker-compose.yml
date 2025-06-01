@@ -38,7 +38,7 @@ services:
     image: mongo:4.4
     restart: always
     volumes:
-      - /mnt/ebs:/data/db   
+      - /mnt/ebs/mongo-data:/data/db  
     networks:
       - app-network
     
