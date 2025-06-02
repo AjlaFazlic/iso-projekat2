@@ -3,7 +3,7 @@ resource "aws_instance" "app" {
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.subnet_a.id
   security_groups        = [aws_security_group.instance_sg.id]
-  key_name               = "vockey"
+  key_name               = "tkey"
   associate_public_ip_address = true
 
   user_data = file("${path.module}/user_data.sh")
