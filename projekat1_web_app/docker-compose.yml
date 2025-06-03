@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 services:
   frontend:
@@ -37,15 +37,17 @@ services:
   mongo:
     image: mongo:4.4
     restart: always
+    ports:
+      - "27017:27017"
     volumes:
-      - /mnt/ebs/mongo-data:/data/db  
+      - mongo-data:/data/db
     networks:
       - app-network
-    
 
-
+volumes:
+  mongo-data:
+    external: true
 
 networks:
   app-network:
     driver: bridge
-
